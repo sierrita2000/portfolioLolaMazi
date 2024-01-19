@@ -1,0 +1,782 @@
+/* CAMARA FONDO */
+
+.contenedor_camara {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.camara {
+  position: absolute;
+  top: 5rem;
+  right: -3rem;
+  height: 85%;
+  width: auto;
+  z-index: -100;
+  opacity: calc(0.2);
+  animation: aparecer_camara 3s ease-in-out;
+  transition: top .5s ease-in-out, right .5s ease-in-out, height .5s ease-in-out;
+}
+
+@keyframes aparecer_camara {
+  from {
+    opacity: calc(0);
+  }
+  to {
+  }
+}
+
+/* CAMARA FONDO */
+
+.contenido {
+  display: flex;
+  align-items: flex-start;
+  padding: 3rem 0 0 0;
+}
+
+/* PERFIL */
+
+.perfil {
+  height: fit-content;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: aparecer_perfil 1s ease-in-out;
+  transition: height .5s ease-in-out, width .5s ease-in-out, margin .5s ease-in-out, padding .5s ease-in-out;
+}
+
+@keyframes aparecer_perfil {
+  from {
+    transform: translateY(35rem);
+  }
+}
+
+.nombre {
+  position: relative;
+  height: 16rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1rem 0 -9rem;
+  transition: width .5s ease-in-out;
+}
+
+.saludo {
+  font-size: 4rem;
+  color: var(--blanco);
+  animation: crecer 4s ease-in-out infinite alternate;
+}
+
+.fondo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--negro);
+  z-index: -1;
+}
+
+.nombre img {
+  position: absolute;
+  top: -4.2rem;
+  width: 98%;
+  z-index: -2;
+  animation: girar 4s ease-in-out infinite alternate;
+  transition: width .5s ease-in-out;
+}
+
+@keyframes crecer {
+  from {
+    filter: blur(10px);
+    transform: scale(0.8);
+  }
+  to {
+  }
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.esfera {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  background-color: #404040;
+  box-shadow: rgb(0, 0, 0, 0.5) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0) 0px 18px 36px -18px inset;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 0 2rem;
+  animation: aparecer_esfera 1.5s ease-in-out;
+  transition: width .5s ease-in-out, height .5s ease-in-out;
+}
+
+.esfera-img {
+  height: 20rem;
+  width: 15rem;
+  border-radius: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: width .5s ease-in-out, height .5s ease-in-out;
+}
+
+@keyframes aparecer_esfera {
+  from {
+    height: 5.8rem;
+    width: 5.8rem;
+  }
+  to {
+  }
+}
+
+.esfera-img img {
+  height: 100%;
+  width: auto;
+  animation: aparecer_img 3s ease-in-out;
+}
+
+@keyframes aparecer_img {
+  from {
+    transform: translateY(25rem);
+  }
+  to {
+  }
+}
+
+.trabajos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: width .5s ease-in-out;
+}
+
+.fotografia,
+.videos {
+  display: flex;
+  align-items: center;
+}
+
+.trabajos h3 {
+  color: var(--blanco);
+  margin: 0.4rem 1rem;
+  font-size: 2rem;
+}
+
+.trabajos i {
+  color: var(--dorado);
+  font-size: 2rem;
+}
+
+/* FIN PERFIL */
+
+/* GALERIA */
+
+.galeria {
+  height: fit-content;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem 0 0;
+  transition: height .5s ease-in-out, width .5s ease-in-out, margin .5s ease-in-out, padding .5s ease-in-out;
+  z-index: 1;
+}
+
+.galeria h1 {
+  font-family: var(--caveat);
+  font-size: 3rem;
+  color: #d9ab82;
+  animation: aparecer_frase 2s ease-in-out;
+  transition: font-size .5s ease-in-out;
+}
+
+@keyframes aparecer_frase {
+  from {
+    transform: translateX(80vw);
+  }
+  to {
+  }
+}
+
+.galeria__fotos {
+  position: relative;
+  height: 19rem;
+  width: 27%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 4rem 0;
+  transition: width .5s ease-in-out, height .5s ease-in-out, margin .5s ease-in-out;
+}
+
+.foto {
+  height: 100%;
+  width: 100%;
+  max-width: 350px;
+  transform: perspective(600px) rotateY(-20deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out, left 0.5s ease-in-out;
+  border: 2px solid var(--gris);
+}
+
+.foto_animation:hover {
+  transform: perspective(600px) rotateY(-20deg) translateX(2rem)
+    translateY(-2rem);
+}
+
+.foto2 {
+  position: absolute;
+  left: 150%;
+}
+
+.foto3 {
+  position: absolute;
+  left: 125%;
+}
+
+.foto4 {
+  position: absolute;
+  left: 100%;
+}
+
+.foto5 {
+  position: absolute;
+  left: 75%;
+}
+
+.foto6 {
+  position: absolute;
+  left: 50%;
+}
+
+.foto7 {
+  position: absolute;
+  left: 25%;
+}
+
+.foto8 {
+  position: absolute;
+  left: 0;
+}
+
+.foto9 {
+  position: absolute;
+  left: -25%;
+}
+
+.foto10 {
+  position: absolute;
+  left: -50%;
+}
+
+.foto11 {
+  position: absolute;
+  left: -75%;
+}
+
+.foto12 {
+  position: absolute;
+  left: -100%;
+}
+
+.foto13 {
+  position: absolute;
+  left: -125%;
+}
+
+.foto14 {
+  position: absolute;
+  left: -150%;
+}
+
+.foto2,
+.foto3,
+.foto4,
+.foto5,
+.foto6,
+.foto7,
+.foto8,
+.foto9,
+.foto10,
+.foto11,
+.foto12,
+.foto13,
+.foto14 {
+  animation: desplazar_fotos 3s ease-in-out;
+}
+
+@keyframes desplazar_fotos {
+  0% {
+    left: 35%;
+    transform: scale(0.2);
+  }
+  40% {
+    left: 35%;
+    transform: scale(1);
+  }
+  65% {
+    left: 0%;
+  }
+  100% {
+  }
+}
+
+.foto__foto {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 20px solid var(--blanco);
+  border-bottom: 50px solid var(--blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: border .5s ease-out;
+  overflow: hidden;
+}
+
+.foto__foto img {
+  width: 100%;
+  height: 100%;
+}
+
+/* FIN GALERIA */
+
+/* MEDIA QUERYS */
+@media (max-width: 1200px) {
+  .galeria {
+    padding: 0 2rem 0;
+  }
+
+  .galeria__fotos {
+    width: 35%;
+  }
+
+  .foto2 {
+    position: absolute;
+    left: 90%;
+  }
+  
+  .foto3 {
+    position: absolute;
+    left: 75%;
+  }
+  
+  .foto4 {
+    position: absolute;
+    left: 60%;
+  }
+  
+  .foto5 {
+    position: absolute;
+    left: 45%;
+  }
+  
+  .foto6 {
+    position: absolute;
+    left: 30%;
+  }
+  
+  .foto7 {
+    position: absolute;
+    left: 15%;
+  }
+  
+  .foto9 {
+    position: absolute;
+    left: -15%;
+  }
+  
+  .foto10 {
+    position: absolute;
+    left: -30%;
+  }
+  
+  .foto11 {
+    position: absolute;
+    left: -45%;
+  }
+  
+  .foto12 {
+    position: absolute;
+    left: -60%;
+  }
+  
+  .foto13 {
+    position: absolute;
+    left: -75%;
+  }
+  
+  .foto14 {
+    position: absolute;
+    left: -90%;
+  }
+
+  .camara {
+    height: 75%;
+    top: 8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nombre {
+    width: 16rem;
+  }
+
+  .saludo {
+    font-size: 3rem;
+  }
+
+  .nombre img {
+    width: 85%;
+  }
+
+  .esfera {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .esfera-img {
+    height: 16rem;
+    width: 12rem;
+  }
+
+  .camara {
+    height: 70%;
+    top: 10rem;
+    right: -9rem;
+  }
+
+  .foto__foto {
+    border: 15px solid var(--blanco);
+    border-bottom: 50px solid var(--blanco);
+  }
+
+  .foto__foto p {
+    font-size: 1rem;
+    bottom: -35px;
+  }
+
+  .galeria__fotos {
+    height: 17rem;
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - 6.5rem);
+    padding: 0;
+  }
+
+  .perfil {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 100%;
+    margin: 0 0 auto;
+    padding: 2rem 0 0;
+  }
+
+  .nombre {
+    height: fit-content;
+    margin: 0;
+  }
+
+  .esfera {
+    margin: 0;
+  }
+
+  .galeria {
+    height: 60%;
+    width: 100%;
+    padding: 0 1rem;
+    margin: -1.5rem 0 0;
+  }
+
+  .galeria h1 {
+    font-size: 2rem;
+  }
+
+  .galeria__fotos {
+    height: 16rem;
+    width: 33%;
+    margin: 2rem 0;
+  }
+
+  .nombre {
+    width: 14rem;
+  }
+
+  .trabajos {
+    width: 14rem;
+    align-items: flex-start;
+  }
+
+  .saludo {
+    font-size: 2.4rem;
+  }
+
+  .nombre img {
+    width: 70%;
+    top: -3.7rem;
+  }
+
+  .fondo {
+    height: 3.5rem;
+    width: 90%;
+    top: -0.5rem;
+    border: 4px solid grey;
+    border-right: 0;
+    border-left: 0;
+    transition: border .5s ease-in-out;
+  }
+
+  .camara {
+    height: 63%;
+    top: 16rem;
+    right: -5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .saludo {
+    font-size: 2rem;
+  }
+
+  .fondo {
+    height: 3rem;
+    width: 70%;
+  }
+
+  .nombre img {
+    width: 60%;
+    top: -3.2rem;
+  }
+
+  .esfera {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .esfera-img {
+    height: 14rem;
+    width: 10rem;
+  }
+
+  .trabajos h3 {
+    font-size: 1.7rem;
+  }
+
+  .trabajos i {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .perfil {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nombre {
+    align-self: flex-end;
+    margin: 0 0 1rem;
+  }
+
+  .trabajos {
+    align-self: flex-end;
+  }
+
+  .saludo {
+    font-size: 1.5rem;
+  }
+
+  .fondo {
+    height: 2.5rem;
+    width: 7rem;
+  }
+
+  .nombre img {
+    width: 6rem;
+    top: -2.8rem;
+  }
+
+  .trabajos h3 {
+    font-size: 1.5rem;
+  }
+
+  .trabajos i {
+    font-size: 1.7rem;
+  }
+
+  .galeria__fotos {
+    height: 13rem;
+  }
+
+  .camara {
+    height: 50%;
+    top: 22rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .perfil {
+    height: 45%;
+  }
+
+  .esfera {
+    margin: 0 -4rem;
+  }
+
+  .nombre {
+    margin: 0 0 2rem;
+  }
+
+  .saludo {
+    font-size: 1.7rem;
+  }
+
+  .fondo {
+    height: 2.8rem;
+    width: 8rem;
+  }
+
+  .nombre img {
+    width: 7rem;
+    top: -2.8rem;
+  }
+
+  .trabajos {
+    align-self: flex-end;
+  }
+
+  .trabajos h3 {
+    font-size: 1.8rem;
+  }
+
+  .trabajos i {
+    font-size: 2rem;
+  }
+
+  .galeria__fotos {
+    height: 12rem;
+  }
+
+  .foto__foto {
+    border: 10px solid var(--blanco);
+    border-bottom: 40px solid var(--blanco);
+  }
+
+  .foto__foto p {
+    bottom: -30px;
+  }
+
+  .camara {
+    height: 50%;
+    top: 22rem;
+    right: auto;
+  }
+
+  .camara {
+    height: 40%;
+    top: 25rem;
+    right: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .saludo {
+    font-size: 1.2rem;
+  }
+
+  .fondo {
+    height: 2.3rem;
+    width: 7rem;
+  }
+
+  .nombre img {
+    width: 5.5rem;
+    top: -1.9rem;
+  }
+
+  .trabajos h3 {
+    font-size: 1.4rem;
+  }
+
+  .trabajos i {
+    font-size: 1.6rem;
+  }
+
+  .galeria__fotos {
+    height: 10rem;
+    width: 38%;
+  }
+
+  .foto__foto {
+    border: 5px solid var(--blanco);
+    border-bottom: 30px solid var(--blanco);
+  }
+
+  .foto__foto p {
+    bottom: -25px;
+    font-size: .8rem
+  }
+}
+
+@media (max-height: 635px) {
+  body {
+    overflow-y: visible;
+    height: fit-content;
+    position: relative;
+  }
+}
+
+@media (max-width: 450px) and (max-height: 700px) {
+  .perfil {
+    height: 270px;
+  }
+
+  .galeria {
+    margin: 1rem 0 0;
+  }
+
+  body {
+    overflow-y: visible;
+    height: fit-content;
+    position: relative;
+  }
+}
+
+/* FIN MEDIA QUERYS */
+
+.mostrar {
+  left: -2.5rem;
+  transform: scale(1.3);
+  z-index: 1;
+  width: fit-content;
+  height: 90%;
+}
+
+.mostrar:hover {
+  filter: grayscale(90%);
+}

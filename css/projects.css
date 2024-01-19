@@ -1,0 +1,990 @@
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: visible;
+}
+
+/* TITULO DE FOTOS Y VIDEOS */
+
+.cuerpo_projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.iconos_videos_fotos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 0 0;
+}
+
+.iconos_videos_fotos__foto,
+.iconos_videos_fotos__cronicas {
+    height: 8rem;
+    width: 8rem;
+    border: 2px solid var(--dorado);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+    box-shadow: 0 0 15px var(--dorado);
+    transition: height .5s ease-in-out, width .5s ease-in-out, margin .5s ease-in-out;
+}
+
+.iconos_videos_fotos__foto i,
+.iconos_videos_fotos__cronicas i {
+    color: var(--dorado);
+    font-size: 4rem;
+    transition: font-size .5s ease-in-out;
+}
+
+.iconos_videos_fotos__foto {
+    transform: rotate(-10deg);
+    animation: aparecer_icono_foto 2s ease-in-out, mover_icono_foto 2s ease-in-out alternate infinite;
+}
+
+@keyframes aparecer_icono_foto {
+    0% {
+        transform: translateX(-50vw) rotate(-180deg);
+    }
+    80% {
+        transform: translateX(15px) rotate(10deg);
+    }
+}
+
+@keyframes mover_icono_foto {
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+.cronicas_videos_fotos__titulo {
+    color: var(--dorado);
+    font-size: 80px;
+    animation: aparecer_titulo 1.5s ease-in-out;
+    transition: font-size .5s ease-in-out;
+}
+
+/* FIN TITULO DE FOTOS Y VIDEOS */
+
+/* SECCION CONCIERTOS */    
+
+.seccion_conciertos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITULO DE CONCIERTOS */
+
+.titulos {
+    color: var(--blanco);
+    font-size: 70px;
+    font-family: var(--caveat);
+    margin: 2rem 0;
+    transition: font-size .5s ease-in-out;
+}
+
+.seccion_conciertos .titulos {
+    animation: aparecer_titulo 1.5s ease-in-out;
+}
+
+@keyframes aparecer_titulo {
+    from {
+        transform: scale(0.3);
+        opacity: calc(0);
+    }
+}
+
+/* FIN TITULO DE CONCIERTOS */
+
+/* CONCIERTO */
+
+.concierto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem 0 0;
+}
+
+.concierto__cuerda {
+    height: 2px;
+    width: 100%;
+    border: 3px solid var(--gris);
+}
+
+.concierto__fotos {
+    align-self: flex-start;
+    display: flex;
+    cursor: grab;
+    transform: translateX(0);
+}
+
+.concierto__fotos__concierto1 {
+    animation: aparecer_concierto1 2s ease-in-out;
+}
+
+@keyframes aparecer_concierto1 {
+    from {
+        transform: translateX(100vw);
+    }
+}
+
+.concierto__fotos__concierto2,
+.concierto__fotos__concierto3,
+.concierto__fotos__concierto4 {
+    transform: translateX(100vw);
+    transition: transform 2s ease-in-out;
+}
+
+.concierto__fotos__foto {
+    position: relative;
+    margin: 0 2rem;
+    transition: margin .5s ease-in-out;
+}
+
+.foto {
+    height: 22rem;
+    width: 24rem;
+    border: 15px solid var(--blanco);
+    margin: 1rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: transform .5s ease-in-out, height .5s ease-in-out, width .5s ease-in-out, border .5s ease-in-out;
+}
+
+.desplazar_foto_izq {
+    transform: translateX(3px) rotate(-3deg) rotateY(25deg);
+}
+
+.desplazar_foto_der {
+    transform: translateX(-3px) rotate(3deg) rotateY(-25deg);
+}
+
+.foto img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.pinza1, 
+.pinza2,
+.pinza3, 
+.pinza4 {
+    filter: drop-shadow(2px 2px 1px var(--dorado));
+    z-index: 1;
+    height: 8rem;
+    top: -5rem;
+    transition: height .5s ease-in-out, top .5s ease-in-out, left .5s ease-in-out;
+}
+
+.pinza1 {
+    position: absolute;
+    left: 12rem;
+    transform: rotate(12deg);
+}
+
+.pinza2 {
+    position: absolute;
+    left: 6rem;
+    transform: rotate(-12deg);
+}
+
+.pinza3 {
+    position: absolute;
+    left: 18rem;
+    transform: rotate(12deg);
+}
+
+.pinza4 {
+    position: absolute;
+    left: 12rem;
+    transform: rotate(-12deg);
+}
+
+.concierto__cinta {
+    position: relative;
+    margin: 5rem 0 2rem;
+    opacity: 0%;
+    transition: opacity 2s ease-in-out;
+    display: flex;
+    justify-content: center;
+}
+
+.cinta2 {
+    transform: rotate(6deg);
+}
+
+.concierto__cinta img {
+    height: 8rem;
+    width: 22rem;
+    filter: drop-shadow(7px 7px 5px var(--gris));
+    transition: height .5s ease-in-out, width .5s ease-in-out;
+}
+
+.concierto__cinta p {
+    position: absolute;
+    top: 1.8rem;
+    transform: rotate(-2deg);
+    color: var(--negro);
+    font-size: 3rem;
+    font-family: var(--caveat);
+    font-weight: bold;
+    z-index: 1;
+    transition: font-size .5s ease-in-out, top .5s ease-in-out, left .5s ease-in-out;
+}
+
+.cinta3 img {
+    width: 30rem;
+}
+
+.cinta3 p{
+    font-size: 2rem;
+    top: 2.2rem;
+}
+
+/* FIN CONCIERTO */
+
+/* FIN SECCION CONCIERTOS */
+
+/* SECCION MESA */
+
+.seccion_mesa {
+    position: relative;
+    width: 100%;
+    margin: 5rem 0 2rem;
+}
+
+.seccion_mesa__mesa {
+    height: 8rem;
+    width: 100%;
+    filter: drop-shadow(0 0 15px var(--gris));
+    transform: scale(0.3);
+    opacity: calc(0);
+    transition: opacity 2s ease-in-out, transform .5s ease-in-out, height .5s ease-in-out;
+}
+
+.seccion_mesa__camara {
+    position: absolute;
+    top: -14rem;
+    right: -6rem;
+    height: 20rem;
+    z-index: 1;
+    filter: drop-shadow(-2px 15px 10px var(--negro));
+    transform: translateX(30vw);
+    transition: transform 1.5s ease-in-out, top .5s ease-in-out, right .5s ease-in-out, height .5s ease-in-out;
+}
+
+.seccion_mesa__cactus {
+    position: absolute;
+    top: -16rem;
+    left: -5rem;
+    height: 20rem;
+    z-index: 1;
+    filter: drop-shadow(0 10px 15px var(--negro));
+    transform: translateX(-30vw);
+    transition: transform 1.5s ease-in-out, top .5s ease-in-out, left .5s ease-in-out, height .5s ease-in-out;
+}
+
+/* FIN SECCION MESA */
+
+/* SECCION CRONICAS */
+
+.seccion_cronicas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion_cronicas__titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion_cronicas__titulo .cronicas_videos_fotos__titulo {
+    transform: scale(0.3);
+    opacity: 0%;
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.iconos_videos_fotos__cronicas {
+    margin: 0;
+    transform: rotate(-12deg);
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    animation: mover_icono_cronicas 2s ease-in-out alternate infinite;
+}
+
+@keyframes mover_icono_cronicas {
+    to {
+        transform: rotate(12deg);
+    }
+}
+
+.seccion_cronicas__cronicas {
+    height: fit-content;
+    width: 100%;
+    margin: 2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: height .5s ease-in-out;
+}
+
+.seccion_cronicas__cronicas__libro {
+    position: relative;
+    height: 720px;
+    width: 70rem;
+    border: 2px solid var(--dorado);
+    display: flex;
+    justify-content: flex-end;
+    transform: scale(0.3);
+    opacity: calc(0);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out, width .5s ease-in-out, height .5s ease-in-out;
+}
+
+.libro__pagina {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagina1__hoja {
+    position: relative;
+    height: 100%;
+    width: 50%;
+}
+
+.libro__pagina__alante {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: whitesmoke;
+    transform: rotateY(0deg);
+    z-index: 1;
+    transition: transform 1s ease-in-out;
+    border: 2px solid grey;
+    scrollbar-width: none;
+}
+
+.libro__pagina__alante::-webkit-scrollbar {
+    width: 0;
+}
+
+.libro__pagina__alante p {
+    font-family: var(--caveat);
+    margin: 0 2rem;
+}
+
+.titulo_cronica {
+    font-size: 40px;
+    transition: font-size .5s ease-in-out;
+}
+
+.texto_cronica {
+    text-align: justify;
+    transition: font-size .5s ease-in-out;
+}
+
+.libro__pagina__detras {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    transform: rotateY(180deg);
+    transition: transform 1s ease-in-out;
+    border: 2px solid grey;
+}
+
+.portada {
+    top: 0;
+    left: 0;
+    border: 2px solid grey;
+    background-color: whitesmoke;
+}
+
+.hoja_cartel {
+    flex-direction: column;
+}
+
+.hoja_cartel img {
+    max-height: 84%;
+    height: 85%;
+    max-width: 95%;
+    width: auto;
+    margin: 1.5rem 0;
+    transition: height .5s ease-in-out, margin .5s ease-in-out;
+}
+
+.hoja_cartel__cinta {
+    height: 20%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height .5s ease-in-out, width .5s ease-in-out;
+}
+
+.hoja_cartel__cinta img {
+    width: 70%;
+}
+
+.hoja_cartel__cinta p {
+    position: absolute;
+    font-family: var(--caveat);
+    font-weight: bold;
+    font-size: 30px;
+    transform: rotate(-3deg);
+    transition: font-size .5s ease-in-out;
+}
+
+.pagina1 {
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: right 1s ease-in-out, transform 1s ease-in-out;
+    justify-content: flex-end;
+}
+
+.pagina_girada {
+    z-index: 2;
+}
+
+.pagina_final_mostrada {
+    z-index: 4;
+}
+
+.final {
+    top: 0;
+    right: 0;
+    border: 2px solid grey;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    scrollbar-width: none;
+}
+
+.final::-webkit-scrollbar {
+    width: none;
+}
+
+.final p {
+    font-family: var(--caveat);
+    margin: 0 2rem;
+    font-size: 15px;
+}
+
+.seccion_cronicas__cronicas__botones {
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    height: 4rem;
+    width: 4rem;
+    background-color: var(--gris);
+    outline: none;
+    border: 4px solid var(--dorado);
+    border-radius: 50%;
+    color: var(--dorado);
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cronicas_boton_izq,
+.cronicas_boton_der {
+    transition: transform .3s ease-in-out, opacity 2s ease-in-out;
+    opacity: 0%;
+    transition: margin .5s ease-in-out;
+}
+
+.cronicas_boton_der {
+    margin: 0 0 0 8rem;
+}
+
+.cronicas_boton_izq {
+    transform: rotate(180deg);
+    margin: 0 8rem 0 0;
+}
+
+.cronicas_boton_izq:active {
+    transform: rotate(180deg) scale(0.9);
+}
+
+.cronicas_boton_der:active {
+    transform: scale(0.9);
+}
+
+/* FIN SECCION CRONICAS */
+
+/* MEDIA QUERYS */
+
+@media (max-width: 1150px) {
+    .cronicas_videos_fotos__titulo {
+        font-size: 60px;
+    }
+
+    .iconos_videos_fotos__foto,
+    .iconos_videos_fotos__video,
+    .iconos_videos_fotos__cronicas {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .iconos_videos_fotos__foto i,
+    .iconos_videos_fotos__video i,
+    .iconos_videos_fotos__cronicas i {
+        font-size: 1.5rem
+    }
+
+    .titulos {
+        font-size: 50px;
+    }
+
+    .foto {
+        height: 20rem;
+        width: 22rem;
+    }
+
+    .pinza1, 
+    .pinza2,
+    .pinza3, 
+    .pinza4 {
+        height: 7rem;
+        top: -4.5rem;
+    }
+
+    .concierto__cinta img {
+        height: 6rem;
+        width: 25rem;
+    }
+
+    .cinta3 img {
+        width: 29rem;
+    }
+
+    .concierto__cinta p {
+        font-size: 2rem;
+        top: 1.5rem;
+    }
+
+    .seccion_mesa__mesa {
+        height: 6.5rem;
+    }
+
+    .seccion_mesa__camara {
+        height: 16rem;
+        top: -11rem;
+    }
+
+    .seccion_mesa__cactus {
+        height: 16rem;
+        top: -13rem;
+    }
+    
+    .seccion_cronicas__cronicas__libro {
+        width: 95%;
+    }
+
+    .final .titulo_cronica {
+        font-size: 30px;
+    }
+
+    .final p {
+        font-size: 14px;
+    }
+
+    .hoja_cartel__cinta p {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 980px) {
+    .libro__pagina__alante p,
+    .final p {
+        margin: 0 1rem;
+    }
+
+    .libro__pagina__alante p {
+        font-size: 15px;
+    }
+
+    .libro__pagina__alante .titulo_cronica {
+        font-size: 30px;
+    }
+
+    .final .titulo_cronica {
+        font-size: 25px;
+    }
+
+    .final p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 850px) {
+    .foto {
+        height: 18rem;
+        width: 20rem;
+    }
+
+    .pinza1,
+    .pinza4 {
+        left: 10rem;
+    }
+
+    .pinza2 {
+        left: 4rem;
+    }
+
+    .pinza3 {
+        left: 15rem;
+    }
+
+    .seccion_mesa__camara {
+        height: 14rem;
+        top: -9rem;
+    }
+
+    .seccion_mesa__cactus {
+        height: 14rem;
+        top: -11rem;
+    }
+
+    .seccion_cronicas__cronicas__libro {
+        height: 610px;
+    }
+
+    .libro__pagina__alante p {
+        font-size: 13px;
+    }
+
+    .libro__pagina__alante .titulo_cronica {
+        font-size: 25px;
+    }
+
+    .final .titulo_cronica {
+        font-size: 20px;
+    }
+
+    .final p {
+        font-size: 12px;
+    }
+
+    .hoja_cartel__cinta p {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 795px) {
+    .final,
+    .libro__pagina__alante {
+        overflow-y: scroll;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 690px) {
+    .cronicas_videos_fotos__titulo {
+        font-size: 45px;
+    }
+
+    .iconos_videos_fotos__foto,
+    .iconos_videos_fotos__video,
+    .iconos_videos_fotos__cronicas {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .iconos_videos_fotos__foto i,
+    .iconos_videos_fotos__video i,
+    .iconos_videos_fotos__cronicas i {
+        font-size: 1.2rem
+    }
+
+    .titulos {
+        font-size: 40px;
+    }
+
+    .concierto {
+        margin: 3rem 0 0;
+    }
+
+    .concierto__cinta {
+        margin: 2rem 0;
+    }
+
+    .foto {
+        height: 15rem;
+        width: 17rem;
+        border: 10px solid var(--blanco);
+    }
+
+    .pinza1, 
+    .pinza2,
+    .pinza3, 
+    .pinza4 {
+        height: 6rem;
+        top: -3.5rem;
+    }
+
+    .pinza1,
+    .pinza4 {
+        left: 9rem;
+    }
+
+    .pinza2 {
+        left: 3rem;
+    }
+
+    .pinza3 {
+        left: 14rem;
+    }
+
+    .cinta3 img {
+        width: 25rem;
+    }
+
+    .cinta3 p {
+        font-size: 1.6rem;
+        top: 1.7rem;
+    }
+
+    .seccion_mesa__camara {
+        height: 12rem;
+        top: -8rem;
+        right: -4rem;
+    }
+
+    .seccion_mesa__cactus {
+        height: 12rem;
+        top: -9rem;
+        left: -3rem;
+    }
+
+    .seccion_cronicas__cronicas__libro {
+        height: 510px;
+    }
+
+    .hoja_cartel__cinta p {
+        font-size: 16px;
+    }
+
+    .boton {
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .seccion_cronicas__cronicas__libro {
+        height: 450px;
+    }
+}
+
+@media (max-width: 515px) {
+    .iconos_videos_fotos__foto,
+    .iconos_videos_fotos__video {
+        margin: 0 1.5rem;
+    }
+
+    .concierto__fotos__foto {
+        margin: 0 .5rem;
+    }
+
+    .concierto__cinta img {
+        height: 5rem;
+        width: 20rem;
+    }
+
+    .concierto__cinta p {
+        font-size: 1.8rem;
+        top: 1.2rem;
+    }
+
+    .cinta3 p {
+        font-size: 1.3rem;
+        top: 1.4rem;
+    }
+
+    .seccion_mesa__camara {
+        height: 10rem;
+        top: -6rem;
+    }
+
+    .seccion_mesa__cactus {
+        height: 10rem;
+        top: -7rem;
+        left: -2rem;
+    }
+
+    .seccion_cronicas__cronicas__libro {
+        height: 350px;
+    }
+
+    .libro__pagina__alante p,
+    .final p {
+        margin: 0 .5rem;
+        font-size: 11px;
+    }
+
+    .cronicas_boton_der {
+        margin: 0 0 0 4rem;
+    }
+    
+    .cronicas_boton_izq {
+        margin: 0 4rem 0 0;
+    }
+
+    .hoja_cartel__cinta {
+        height: 13%;
+        width: 80%;
+    }
+
+    .hoja_cartel__cinta p {
+        font-size: 12px;
+    }
+
+    .hoja_cartel img {
+        height: auto;
+        width: 90%;
+        margin: .5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .cronicas_videos_fotos__titulo {
+        font-size: 35px;
+    }
+
+    .iconos_videos_fotos__foto,
+    .iconos_videos_fotos__video,
+    .iconos_videos_fotos__cronicas {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin: 0 1rem;
+    }
+
+    .iconos_videos_fotos__foto i,
+    .iconos_videos_fotos__video i,
+    .iconos_videos_fotos__cronicas i {
+        font-size: 1rem
+    }
+
+    .titulos {
+        font-size: 30px;
+        margin: 2rem 0 .5rem;
+    }
+
+    .foto {
+        height: 10rem;
+        width: 12rem;
+        border: 5px solid var(--blanco);
+    }
+
+    .pinza1, 
+    .pinza2,
+    .pinza3, 
+    .pinza4 {
+        height: 4rem;
+        top: -2.2rem;
+    }
+
+    .pinza1,
+    .pinza4 {
+        left: 7rem;
+    }
+
+    .pinza2 {
+        left: 1.5rem;
+    }
+
+    .pinza3 {
+        left: 11rem;
+    }
+
+    .concierto__cinta {
+        margin: 2rem 0 1rem;
+    }
+
+    .concierto__cinta img {
+        width: 15rem;
+    }
+
+    .concierto__cinta p {
+        font-size: 1.3rem;
+        top: 1.5rem;
+    }
+
+    .cinta3 p {
+        font-size: 1rem;
+        top: 1.6rem;
+    }
+
+    .seccion_mesa__mesa {
+        height: 5rem;
+    }
+
+    .seccion_mesa__camara {
+        height: 8rem;
+        top: -5rem;
+        right: -3rem;
+    }
+
+    .seccion_mesa__cactus {
+        height: 9rem;
+        top: -6.5rem;
+        left: -2rem;
+    }
+
+    .seccion_cronicas__cronicas {
+        height: 50vh;
+    }
+
+    .hoja_cartel__cinta p {
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 640px) {
+    .seccion_cronicas__cronicas {
+        min-height: 540px;
+    }
+}
+
+/* FIN MEDIA QUERYS */
