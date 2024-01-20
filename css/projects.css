@@ -45,8 +45,7 @@ body {
 }
 
 .iconos_videos_fotos__foto {
-    transform: rotate(-10deg);
-    animation: aparecer_icono_foto 2s ease-in-out, mover_icono_foto 2s ease-in-out alternate infinite;
+    animation: aparecer_icono_foto 2s ease-in-out;
 }
 
 @keyframes aparecer_icono_foto {
@@ -55,12 +54,6 @@ body {
     }
     80% {
         transform: translateX(15px) rotate(10deg);
-    }
-}
-
-@keyframes mover_icono_foto {
-    to {
-        transform: rotate(10deg);
     }
 }
 
@@ -121,11 +114,27 @@ body {
     border: 3px solid var(--gris);
 }
 
+.contenedor__concierto__fotos {
+    height: fit-content;
+    width: 100vw;
+}
+
+.contenedor__concierto__fotos__tactil {
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.contenedor__concierto__fotos::-webkit-scrollbar {
+    width: 0;
+}
+
 .concierto__fotos {
     align-self: flex-start;
     display: flex;
     cursor: grab;
     transform: translateX(0);
+    z-index: 1;
+    width: fit-content;
 }
 
 .concierto__fotos__concierto1 {
@@ -318,7 +327,7 @@ body {
 }
 
 .iconos_videos_fotos__cronicas {
-    margin: 0;
+    margin: 1rem 0;
     transform: rotate(-12deg);
     opacity: 0;
     transition: opacity 2s ease-in-out;
@@ -529,6 +538,13 @@ body {
     align-items: center;
     cursor: pointer;
 }
+
+.boton p {
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 .cronicas_boton_izq,
 .cronicas_boton_der {
@@ -824,7 +840,7 @@ body {
 @media (max-width: 515px) {
     .iconos_videos_fotos__foto,
     .iconos_videos_fotos__video {
-        margin: 0 1.5rem;
+        margin: 1rem 1.5rem;
     }
 
     .concierto__fotos__foto {
@@ -900,7 +916,7 @@ body {
     .iconos_videos_fotos__cronicas {
         height: 2.5rem;
         width: 2.5rem;
-        margin: 0 1rem;
+        margin: 1rem 1rem;
     }
 
     .iconos_videos_fotos__foto i,

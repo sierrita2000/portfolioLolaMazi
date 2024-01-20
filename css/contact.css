@@ -561,6 +561,10 @@
     top: 1.6rem;
     right: 1.6rem;
   }
+
+  .octagono p {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-height: 680px) {
