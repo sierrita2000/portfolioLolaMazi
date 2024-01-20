@@ -440,14 +440,20 @@ const eventoBotones = (boton_izq, boton_der) => {
     if (turno_hoja == 0) {
       paginas[turno_hoja].classList.add('pagina_girada');
       paginas[turno_hoja].style.transform = 'perspective(1000px) rotateY(-180deg)';
-      setTimeout(() => {pagina_final.classList.add('pagina_final_mostrada');}, 500)
+      setTimeout(() => {
+        pagina_final.classList.add('pagina_final_mostrada');
+        paginas[turno_hoja].querySelector('.libro__pagina__detras').classList.add('libro__pagina__detras__chrome');
+      }, 500)
     }
   })
 
   boton_izq.addEventListener('click', () => {
     if (turno_hoja == 0) {
       paginas[turno_hoja].style.transform = 'perspective(1000px) rotateY(0deg)';
-      setTimeout(() => {paginas[turno_hoja].classList.remove('pagina_girada');}, 500); // necesario para que la página mantenga el índice hasta que acabe la transición.
+      setTimeout(() => {
+        paginas[turno_hoja].classList.remove('pagina_girada');
+        paginas[turno_hoja].querySelector('.libro__pagina__detras').classList.remove('libro__pagina__detras__chrome');
+      }, 500); // necesario para que la página mantenga el índice hasta que acabe la transición.
       pagina_final.classList.remove('pagina_final_mostrada');
     }
   })
@@ -539,13 +545,15 @@ const eventosSlider = (slider, fotos_a_mover) => {
     if (!pulsado) return; // si el ratón está clicado.
     e.preventDefault();
     const pixeles_a_mover = e.pageX - startX;
-    if ((pixeles_movidos > 0) && (pixeles_a_mover > 0)) {                       // si se está desplazando el slider.
+    if ((pixeles_movidos > 0) && (pixeles_a_mover > 0)) {  
+      console.log('uno')                     // si se está desplazando el slider a la izquierda sin poderse.
       startX = e.pageX;
-    } else if (comprobarFinSlider(slider, pixeles_movidos, pixeles_a_mover)) {  // si ya no hay más fotos en la galería.
+    } else if (comprobarFinSlider(slider, pixeles_a_mover)) {  // si ya no hay más fotos en la galería a la derecha.
+      console.log('dos') 
       startX = e.pageX;
     } else {                                                                    // si se puede desplazar el slider.
       let movimiento = posicion_actual + pixeles_a_mover;
-      slider.style.transform = `translateX(${movimiento}px)`;
+      slider.style.transform = `translateX(${movimiento * 1.3}px)`;
       pixeles_movidos = posicion_actual + pixeles_a_mover;
       moverFotografias(movimiento_anterior, movimiento, fotos_a_mover);
       movimiento_anterior = movimiento;
@@ -560,16 +568,12 @@ const eventosSlider = (slider, fotos_a_mover) => {
  * @param {Int16Array} pixeles_a_mover 
  * @returns boolean
  */
-const comprobarFinSlider = (slider, pixeles_movidos, pixeles_a_mover) => {
+const comprobarFinSlider = (slider, pixeles_a_mover) => {
   const body = document.querySelector('body');
 
-  const ancho_pantalla = body.clientWidth; // ancho de la pantalla.
-  const ancho_slider = slider.clientWidth; // ancho del slider.
-  
-  if (((ancho_slider - ancho_pantalla + pixeles_movidos) < 0) && (pixeles_a_mover < 0)) {
+  if ((slider.getBoundingClientRect().right < body.clientWidth) && (pixeles_a_mover < 0)) {
     return true;
-  } 
-
+  }
   return false;
 }
 

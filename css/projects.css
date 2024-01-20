@@ -32,7 +32,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 3rem;
+    margin: 1rem 3rem;
     box-shadow: 0 0 15px var(--dorado);
     transition: height .5s ease-in-out, width .5s ease-in-out, margin .5s ease-in-out;
 }
@@ -420,6 +420,10 @@ body {
     border: 2px solid grey;
 }
 
+.libro__pagina__detras__chrome {
+    z-index: 1;
+}
+
 .portada {
     top: 0;
     left: 0;
@@ -433,7 +437,7 @@ body {
 
 .hoja_cartel img {
     max-height: 84%;
-    height: 85%;
+    height: 70%;
     max-width: 95%;
     width: auto;
     margin: 1.5rem 0;
@@ -560,14 +564,12 @@ body {
     }
 
     .iconos_videos_fotos__foto,
-    .iconos_videos_fotos__video,
     .iconos_videos_fotos__cronicas {
         height: 3.5rem;
         width: 3.5rem;
     }
 
     .iconos_videos_fotos__foto i,
-    .iconos_videos_fotos__video i,
     .iconos_videos_fotos__cronicas i {
         font-size: 1.5rem
     }
@@ -717,6 +719,10 @@ body {
         overflow-y: scroll;
         justify-content: flex-start;
     }
+
+    .titulo_cronica {
+        margin: 1rem;
+    }
 }
 
 @media (max-width: 690px) {
@@ -725,14 +731,12 @@ body {
     }
 
     .iconos_videos_fotos__foto,
-    .iconos_videos_fotos__video,
     .iconos_videos_fotos__cronicas {
         height: 3rem;
         width: 3rem;
     }
 
     .iconos_videos_fotos__foto i,
-    .iconos_videos_fotos__video i,
     .iconos_videos_fotos__cronicas i {
         font-size: 1.2rem
     }
@@ -893,7 +897,6 @@ body {
     }
 
     .iconos_videos_fotos__foto,
-    .iconos_videos_fotos__video,
     .iconos_videos_fotos__cronicas {
         height: 2.5rem;
         width: 2.5rem;
@@ -901,7 +904,6 @@ body {
     }
 
     .iconos_videos_fotos__foto i,
-    .iconos_videos_fotos__video i,
     .iconos_videos_fotos__cronicas i {
         font-size: 1rem
     }

@@ -75,7 +75,7 @@ body {
 
 .subrayado {
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   height: 3px;
   width: 100%;
@@ -218,6 +218,7 @@ body {
   height: 100vh;
   flex-direction: column;
   justify-content: space-around;
+  padding: 0 0 4rem;
 }
 
 .cambio_icono_hamburguesa {
