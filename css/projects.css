@@ -434,7 +434,7 @@ body {
 }
 
 .libro__pagina__detras__chrome {
-    z-index: 1;
+    z-index: 2;
 }
 
 .portada {
@@ -529,26 +529,23 @@ body {
 }
 
 .boton {
-    height: 4rem;
-    width: 4rem;
     background-color: var(--gris);
     outline: none;
     border: 4px solid var(--dorado);
     border-radius: 50%;
     color: var(--dorado);
-    font-size: 6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
+    padding: 1rem;
 }
 
 .boton p {
-    height: 1rem;
+    font-size: 7rem;
+    height: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-  }
+    width: 2rem;
+    justify-content: center;
+}
 
 .cronicas_boton_izq,
 .cronicas_boton_der {
@@ -831,6 +828,11 @@ body {
     .boton {
         height: 3rem;
         width: 3rem;
+        padding: revert;
+    }
+
+    .boton p {
+        font-size: 6rem;
     }
 }
 

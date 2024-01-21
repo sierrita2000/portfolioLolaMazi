@@ -785,10 +785,10 @@
 /* FIN MEDIA QUERYS */
 
 .mostrar {
-  left: 0;
+  left: auto;
   transform: scale(1.3);
   z-index: 1;
-  width: fit-content;
+  width: max-content;
   height: 90%;
 }
 
