@@ -403,14 +403,8 @@ const cargarEventosProjects = (pantalla_tactil) => {
       }
     });
 
-    const [top_concierto, offset_concierto, height_concierto] = medidas(
-      concierto__fotos__concierto2
-    );
-    if (
-      top_concierto >=
-        offset_concierto - window.innerHeight + height_concierto / 2 &&
-      !transicion_concierto2_realizada
-    ) {
+    let [top_concierto, offset_concierto, height_concierto] = medidas(concierto__fotos__concierto2);
+    if ((top_concierto >= (offset_concierto - window.innerHeight + (height_concierto / 2))) && (!transicion_concierto2_realizada)) {
       concierto__fotos__concierto2.style.transform = "translateX(0)";
       setTimeout(() => {
         concierto__fotos__concierto2.style.transition = "none";
@@ -418,14 +412,9 @@ const cargarEventosProjects = (pantalla_tactil) => {
       transicion_concierto2_realizada = true;
     }
 
-    const [top_concierto3, offset_concierto3, height_concierto3] = medidas(
-      concierto__fotos__concierto3
-    );
-    if (
-      top_concierto3 >=
-        offset_concierto3 - window.innerHeight + height_concierto3 / 2 &&
-      !transicion_concierto3_realizada
-    ) {
+    let [top_concierto3, offset_concierto3, height_concierto3] = medidas(concierto__fotos__concierto3);
+    if ((top_concierto3 >= (offset_concierto3 - window.innerHeight + (height_concierto3 / 2))) && (!transicion_concierto3_realizada)) {
+      console.log('aparece el 2: ', top_concierto3, offset_concierto3, window.innerHeight, (height_concierto3/2), transicion_concierto3_realizada)
       concierto__fotos__concierto3.style.transform = "translateX(0)";
       setTimeout(() => {
         concierto__fotos__concierto3.style.transition = "none";
@@ -433,14 +422,9 @@ const cargarEventosProjects = (pantalla_tactil) => {
       transicion_concierto3_realizada = true;
     }
 
-    const [top_concierto4, offset_concierto4, height_concierto4] = medidas(
-      concierto__fotos__concierto4
-    );
-    if (
-      top_concierto4 >=
-        offset_concierto4 - window.innerHeight + height_concierto4 / 2 &&
-      !transicion_concierto4_realizada
-    ) {
+    let [top_concierto4, offset_concierto4, height_concierto4] = medidas(concierto__fotos__concierto4);
+    if ((top_concierto4 >= (offset_concierto4 - window.innerHeight + (height_concierto4 / 2))) && (!transicion_concierto4_realizada)) {
+      console.log('aparece el 3: ', top_concierto4, offset_concierto4, window.innerHeight, (height_concierto4/2), transicion_concierto4_realizada)
       concierto__fotos__concierto4.style.transform = "translateX(0)";
       setTimeout(() => {
         concierto__fotos__concierto4.style.transition = "none";
@@ -671,7 +655,7 @@ const eventosSlider = (slider, fotos_a_mover) => {
 
   // handler que controla si se mueve el ratón una vez clicado el slider.
   slider.onpointermove = (e) => {
-    if (!pulsado && !slider_tactil) return; // si el ratón está clicado y no es desde el movil.
+    if (!pulsado) return; // si el ratón está clicado y no es desde el movil.
     e.preventDefault();
     const pixeles_a_mover = e.pageX - startX;
     if (pixeles_movidos > 0 && pixeles_a_mover > 0) { // si se está desplazando el slider a la izquierda sin poderse.
